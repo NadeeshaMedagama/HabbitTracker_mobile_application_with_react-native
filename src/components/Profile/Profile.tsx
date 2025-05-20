@@ -69,12 +69,16 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
     marginBottom: 30,
+    paddingVertical: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
   },
   name: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 15,
     color: '#333',
+    textAlign: 'center',
   },
   email: {
     fontSize: 16,
