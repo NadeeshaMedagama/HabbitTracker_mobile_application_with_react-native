@@ -19,35 +19,38 @@ export const Profile = ({ navigation }: any) => {
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <Icon name="account-circle" size={80} color="#6200ee" />
-        <Text style={styles.name}>{user?.name}</Text>
-        <Text style={styles.email}>{user?.email}</Text>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Icon name="account-circle" size={80} color="#6200ee" />
+          <Text style={styles.name}>{user?.name}</Text>
+          <Text style={styles.email}>{user?.email}</Text>
+        </View>
+
+        <View style={styles.section}>
+          <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => navigation.navigate('Settings')}
+          >
+            <Icon name="settings" size={24} color="#6200ee" />
+            <Text style={styles.menuText}>Settings</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.menuItem}>
+            <Icon name="notifications" size={24} color="#6200ee" />
+            <Text style={styles.menuText}>Notifications</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.menuItem}>
+            <Icon name="help" size={24} color="#6200ee" />
+            <Text style={styles.menuText}>Help & Support</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
+          <Icon name="logout" size={24} color="#fff" />
+          <Text style={styles.logoutText}>Logout</Text>
+        </TouchableOpacity>
       </View>
-
-      <View style={styles.section}>
-        <TouchableOpacity style={styles.menuItem}>
-          <Icon name="settings" size={24} color="#6200ee" />
-          <Text style={styles.menuText}>Settings</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.menuItem}>
-          <Icon name="notifications" size={24} color="#6200ee" />
-          <Text style={styles.menuText}>Notifications</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.menuItem}>
-          <Icon name="help" size={24} color="#6200ee" />
-          <Text style={styles.menuText}>Help & Support</Text>
-        </TouchableOpacity>
-      </View>
-
-      <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-        <Icon name="logout" size={24} color="#fff" />
-        <Text style={styles.logoutText}>Logout</Text>
-      </TouchableOpacity>
-    </View>
   );
 };
 
@@ -102,4 +105,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 10,
   },
-}); 
+});
