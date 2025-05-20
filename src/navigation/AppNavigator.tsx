@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useAuth } from '../context/AuthContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProfileScreen from '../screens/ProfileScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 // Auth Screens
 import LoginScreen from '../screens/AuthScreen';
@@ -22,6 +23,23 @@ const AuthStack = () => (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
+    </Stack.Navigator>
+);
+
+const ProfileStack = () => (
+    <Stack.Navigator>
+        <Stack.Screen name="ProfileMain" component={ProfileScreen} options={{ headerShown: false }} />
+        <Stack.Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{
+                title: 'Settings',
+                headerStyle: {
+                    backgroundColor: '#6200ee',
+                },
+                headerTintColor: '#fff',
+            }}
+        />
     </Stack.Navigator>
 );
 
@@ -49,7 +67,7 @@ const MainTabs = () => (
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name="Create" component={CreateHabitScreen} />
         <Tab.Screen name="Progress" component={ProgressScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
+        <Tab.Screen name="Profile" component={ProfileStack} />
     </Tab.Navigator>
 );
 
