@@ -35,7 +35,10 @@ export const Profile = ({ navigation }: any) => {
             <Text style={styles.menuText}>Settings</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => navigation.navigate('Notifications')}
+          >
             <Icon name="notifications" size={24} color="#6200ee" />
             <Text style={styles.menuText}>Notifications</Text>
           </TouchableOpacity>
