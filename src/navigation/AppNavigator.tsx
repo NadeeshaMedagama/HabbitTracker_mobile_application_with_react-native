@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
+import HelpSupportScreen from '../screens/HelpSupportScreen';
 
 // Auth Screens
 import LoginScreen from '../screens/AuthScreen';
@@ -46,6 +47,17 @@ const ProfileStack = () => (
             component={NotificationsScreen}
             options={{
                 title: 'Notifications',
+                headerStyle: {
+                    backgroundColor: '#6200ee',
+                },
+                headerTintColor: '#fff',
+            }}
+        />
+        <Stack.Screen
+            name="HelpSupport"
+            component={HelpSupportScreen}
+            options={{
+                title: 'Help & Support',
                 headerStyle: {
                     backgroundColor: '#6200ee',
                 },
