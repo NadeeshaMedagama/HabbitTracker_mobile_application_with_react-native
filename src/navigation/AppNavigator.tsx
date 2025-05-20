@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
 
 // Auth Screens
 import LoginScreen from '../screens/AuthScreen';
@@ -34,6 +35,17 @@ const ProfileStack = () => (
             component={SettingsScreen}
             options={{
                 title: 'Settings',
+                headerStyle: {
+                    backgroundColor: '#6200ee',
+                },
+                headerTintColor: '#fff',
+            }}
+        />
+        <Stack.Screen
+            name="Notifications"
+            component={NotificationsScreen}
+            options={{
+                title: 'Notifications',
                 headerStyle: {
                     backgroundColor: '#6200ee',
                 },
