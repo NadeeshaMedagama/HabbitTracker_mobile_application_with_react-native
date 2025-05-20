@@ -43,7 +43,10 @@ export const Profile = ({ navigation }: any) => {
             <Text style={styles.menuText}>Notifications</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.menuItem}>
+          <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => navigation.navigate('HelpSupport')}
+          >
             <Icon name="help" size={24} color="#6200ee" />
             <Text style={styles.menuText}>Help & Support</Text>
           </TouchableOpacity>
