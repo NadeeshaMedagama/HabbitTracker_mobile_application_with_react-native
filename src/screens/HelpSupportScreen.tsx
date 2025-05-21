@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { useTheme } from '../context/ThemeContext';
 
 const HelpSupportScreen = () => {
+    const { colors } = useTheme();
     const faqs = [
         {
             question: "How do I create a new habit?",
@@ -15,45 +17,45 @@ const HelpSupportScreen = () => {
         {
             question: "Can I change my notification settings?",
             answer: "Yes, go to Profile > Notifications to customize your notification preferences."
-        }
+        },
     ];
 
     return (
-        <ScrollView style={styles.container}>
-            <Text style={styles.title}>Help & Support</Text>
+        <ScrollView style={[styles.container, { backgroundColor: colors.background }]}>
+            <Text style={[styles.title, { color: colors.primary }]}>Help & Support</Text>
 
             <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Frequently Asked Questions</Text>
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>Frequently Asked Questions</Text>
                 {faqs.map((faq, index) => (
-                    <View key={index} style={styles.faqItem}>
-                        <Text style={styles.question}>{faq.question}</Text>
-                        <Text style={styles.answer}>{faq.answer}</Text>
+                    <View key={index} style={[styles.faqItem, { borderBottomColor: colors.border }]}>
+                        <Text style={[styles.question, { color: colors.text }]}>{faq.question}</Text>
+                        <Text style={[styles.answer, { color: colors.textSecondary }]}>{faq.answer}</Text>
                     </View>
                 ))}
             </View>
 
             <View style={styles.section}>
-                <Text style={styles.sectionTitle}>Contact Support</Text>
-                <TouchableOpacity style={styles.contactItem}>
-                    <Icon name="email" size={24} color="#6200ee" />
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>Contact Support</Text>
+                <TouchableOpacity style={[styles.contactItem, { borderBottomColor: colors.border }]}>
+                    <Icon name="email" size={24} color={colors.primary} />
                     <View style={styles.contactInfo}>
-                        <Text style={styles.contactTitle}>Email Support</Text>
-                        <Text style={styles.contactText}>support@habittracker.com</Text>
+                        <Text style={[styles.contactTitle, { color: colors.text }]}>Email Support</Text>
+                        <Text style={[styles.contactText, { color: colors.textSecondary }]}>support@habittracker.com</Text>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.contactItem}>
-                    <Icon name="chat" size={24} color="#6200ee" />
+                <TouchableOpacity style={[styles.contactItem, { borderBottomColor: colors.border }]}>
+                    <Icon name="chat" size={24} color={colors.primary} />
                     <View style={styles.contactInfo}>
-                        <Text style={styles.contactTitle}>Live Chat</Text>
-                        <Text style={styles.contactText}>Available 24/7</Text>
+                        <Text style={[styles.contactTitle, { color: colors.text }]}>Live Chat</Text>
+                        <Text style={[styles.contactText, { color: colors.textSecondary }]}>Available 24/7</Text>
                     </View>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.section}>
-                <Text style={styles.sectionTitle}>App Information</Text>
-                <Text style={styles.version}>Version 1.0.0</Text>
+                <Text style={[styles.sectionTitle, { color: colors.text }]}>App Information</Text>
+                <Text style={[styles.version, { color: colors.textSecondary }]}>Version 1.0.0</Text>
             </View>
         </ScrollView>
     );
@@ -62,14 +64,12 @@ const HelpSupportScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         padding: 20,
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: '#6200ee',
     },
     section: {
         marginBottom: 30,
@@ -78,23 +78,19 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         marginBottom: 15,
-        color: '#333',
     },
     faqItem: {
         marginBottom: 20,
         paddingBottom: 20,
         borderBottomWidth: 1,
-        borderBottomColor: '#eee',
     },
     question: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#333',
         marginBottom: 8,
     },
     answer: {
         fontSize: 14,
-        color: '#666',
         lineHeight: 20,
     },
     contactItem: {
@@ -102,7 +98,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingVertical: 15,
         borderBottomWidth: 1,
-        borderBottomColor: '#eee',
     },
     contactInfo: {
         marginLeft: 15,
@@ -110,16 +105,13 @@ const styles = StyleSheet.create({
     contactTitle: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#333',
     },
     contactText: {
         fontSize: 14,
-        color: '#666',
         marginTop: 2,
     },
     version: {
         fontSize: 14,
-        color: '#666',
         textAlign: 'center',
     },
 });
