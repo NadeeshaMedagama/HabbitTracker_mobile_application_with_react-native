@@ -25,12 +25,11 @@ export const Profile = ({ navigation }: any) => {
         <View style={[styles.header, { borderBottomColor: colors.border }]}>
           <Icon name="account-circle" size={80} color={colors.primary} />
           <Text style={[styles.name, { color: colors.text }]}>{user?.name}</Text>
-          <Text style={[styles.email, { color: colors.textSecondary }]}>{user?.email}</Text>
-          {user?.gender && (
-              <Text style={[styles.gender, { color: colors.textSecondary }]}>Gender:&nbsp;
-                {user.gender.charAt(0).toUpperCase() + user.gender.slice(1)}
-              </Text>
-          )}
+          <Text style={styles.profileInfo}>Email: {user?.email || '-'}</Text>
+          <Text style={styles.profileInfo}>
+            Gender: {user?.gender ? user.gender.charAt(0).toUpperCase() + user.gender.slice(1) : '-'}
+          </Text>
+          <Text style={styles.profileInfo}>Birthday: {user?.birthday || '-'}</Text>
         </View>
 
         <View style={styles.section}>
@@ -75,6 +74,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
   },
+  profileInfo: {
+    fontSize: 16,
+    marginTop: 8,
+    color: '#222',
+    marginRight: 10,
+    alignSelf: 'flex-start',
+  },
   header: {
     alignItems: 'center',
     marginBottom: 30,
@@ -84,7 +90,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 28,
     fontWeight: 'bold',
-    marginTop: 15,
+    marginTop: 10,
     textAlign: 'center',
   },
   email: {
@@ -95,6 +101,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 5,
     textTransform: 'capitalize',
+  },
+  birthday: {
+    fontSize: 16,
+    marginTop: 5,
   },
   section: {
     marginBottom: 30,
