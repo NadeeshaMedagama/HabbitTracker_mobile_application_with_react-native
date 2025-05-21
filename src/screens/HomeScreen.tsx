@@ -2,10 +2,12 @@ import React, { useEffect } from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, ScrollView } from 'react-native';
 import { HabitList } from '../components/Habits/HabitList';
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const HomeScreen = ({ navigation }: any) => {
   const { logout } = useAuth();
+  const { colors } = useTheme();
 
   const handleLogout = async () => {
     try {
@@ -28,42 +30,42 @@ const HomeScreen = ({ navigation }: any) => {
                 onPress={() => navigation.navigate('Profile')}
                 style={styles.profileButton}
             >
-              <Icon name="person" size={24} color="#6200ee" />
+              <Icon name="person" size={24} color={colors.primary} />
             </TouchableOpacity>
-            {/*<TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>*/}
-            {/*  <Text style={styles.logoutText}>Logout</Text>*/}
-            {/*</TouchableOpacity>*/}
+            {/* <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+            <Text style={styles.logoutText}>Logout</Text>
+          </TouchableOpacity> */}
           </View>
       ),
     });
-  }, [navigation]);
+  }, [navigation, colors]);
 
   return (
-      <ScrollView style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.title}>Today's Habits</Text>
-          <Text style={styles.subtitle}>Track your daily progress</Text>
+      <ScrollView style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={[styles.header, { backgroundColor: colors.primary }]}>
+          <Text style={[styles.title, { color: colors.white }]}>Today's Habits</Text>
+          <Text style={[styles.subtitle, { color: colors.white }]}>Track your daily progress</Text>
         </View>
 
         <View style={styles.quickActions}>
           <TouchableOpacity
-              style={styles.actionButton}
+              style={[styles.actionButton, { backgroundColor: colors.primary }]}
               onPress={() => navigation.navigate('Create')}
           >
-            <Icon name="add-circle" size={24} color="#fff" />
-            <Text style={styles.actionText}>New Habit</Text>
+            <Icon name="add-circle" size={24} color={colors.white} />
+            <Text style={[styles.actionText, { color: colors.white }]}>New Habit</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-              style={styles.actionButton}
+              style={[styles.actionButton, { backgroundColor: colors.primary }]}
               onPress={() => navigation.navigate('Progress')}
           >
-            <Icon name="insert-chart" size={24} color="#fff" />
-            <Text style={styles.actionText}>View Progress</Text>
+            <Icon name="insert-chart" size={24} color={colors.white} />
+            <Text style={[styles.actionText, { color: colors.white }]}>View Progress</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={styles.habitsSection}>
+        <View style={[styles.habitsSection, { backgroundColor: colors.card }]}>
           <HabitList />
         </View>
       </ScrollView>
@@ -73,20 +75,16 @@ const HomeScreen = ({ navigation }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
   },
   header: {
     padding: 20,
-    backgroundColor: '#6200ee',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#fff',
   },
   subtitle: {
     fontSize: 16,
-    color: '#fff',
     opacity: 0.8,
     marginTop: 5,
   },
@@ -96,19 +94,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   actionButton: {
-    backgroundColor: '#6200ee',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
     width: '45%',
   },
   actionText: {
-    color: '#fff',
     marginTop: 5,
     fontWeight: 'bold',
   },
   habitsSection: {
     padding: 20,
+    borderRadius: 10,
+    margin: 20,
   },
   headerButtons: {
     flexDirection: 'row',
