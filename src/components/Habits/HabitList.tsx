@@ -38,22 +38,22 @@ export const HabitList = () => {
 
   const handleDelete = async (habitId: string) => {
     Alert.alert(
-      'Delete Habit',
-      'Are you sure you want to delete this habit?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Delete',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              await deleteHabit(habitId);
-            } catch (error) {
-              Alert.alert('Error', 'Failed to delete habit');
-            }
+        'Delete Habit',
+        'Are you sure you want to delete this habit?',
+        [
+          { text: 'Cancel', style: 'cancel' },
+          {
+            text: 'Delete',
+            style: 'destructive',
+            onPress: async () => {
+              try {
+                await deleteHabit(habitId);
+              } catch (error) {
+                Alert.alert('Error', 'Failed to delete habit');
+              }
+            },
           },
-        },
-      ]
+        ]
     );
   };
 
@@ -61,70 +61,70 @@ export const HabitList = () => {
     const isCompleted = item.completedDates.includes(today);
 
     return (
-      <View style={styles.habitItem}>
-        <View style={styles.habitInfo}>
-          <Text style={styles.habitName}>{item.name}</Text>
-          <Text style={styles.habitFrequency}>
-            {item.frequency.charAt(0).toUpperCase() + item.frequency.slice(1)}
-          </Text>
+        <View style={styles.habitItem}>
+          <View style={styles.habitInfo}>
+            <Text style={styles.habitName}>{item.name}</Text>
+            <Text style={styles.habitFrequency}>
+              {item.frequency.charAt(0).toUpperCase() + item.frequency.slice(1)}
+            </Text>
+          </View>
+          <View style={styles.habitActions}>
+            <TouchableOpacity
+                style={[styles.actionButton, isCompleted && styles.completedButton]}
+                onPress={() => handleComplete(item.id)}
+            >
+              <Icon
+                  name={isCompleted ? 'check-circle' : 'radio-button-unchecked'}
+                  size={24}
+                  color={isCompleted ? '#fff' : '#6200ee'}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[styles.actionButton, styles.deleteButton]}
+                onPress={() => handleDelete(item.id)}
+            >
+              <Icon name="delete" size={24} color="#ff4444" />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.habitActions}>
-          <TouchableOpacity
-            style={[styles.actionButton, isCompleted && styles.completedButton]}
-            onPress={() => handleComplete(item.id)}
-          >
-            <Icon
-              name={isCompleted ? 'check-circle' : 'radio-button-unchecked'}
-              size={24}
-              color={isCompleted ? '#fff' : '#6200ee'}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={[styles.actionButton, styles.deleteButton]}
-            onPress={() => handleDelete(item.id)}
-          >
-            <Icon name="delete" size={24} color="#ff4444" />
-          </TouchableOpacity>
-        </View>
-      </View>
     );
   };
 
   return (
-    <View style={styles.container}>
-      <View style={styles.filterContainer}>
-        <TouchableOpacity
-          style={[styles.filterButton, filter === 'all' && styles.filterButtonActive]}
-          onPress={() => setFilter('all')}
-        >
-          <Text style={[styles.filterText, filter === 'all' && styles.filterTextActive]}>
-            All
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.filterButton, filter === 'today' && styles.filterButtonActive]}
-          onPress={() => setFilter('today')}
-        >
-          <Text style={[styles.filterText, filter === 'today' && styles.filterTextActive]}>
-            Today
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.filterButton, filter === 'completed' && styles.filterButtonActive]}
-          onPress={() => setFilter('completed')}
-        >
-          <Text style={[styles.filterText, filter === 'completed' && styles.filterTextActive]}>
-            Completed
-          </Text>
-        </TouchableOpacity>
+      <View style={styles.container}>
+        <View style={styles.filterContainer}>
+          <TouchableOpacity
+              style={[styles.filterButton, filter === 'all' && styles.filterButtonActive]}
+              onPress={() => setFilter('all')}
+          >
+            <Text style={[styles.filterText, filter === 'all' && styles.filterTextActive]}>
+              All
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={[styles.filterButton, filter === 'today' && styles.filterButtonActive]}
+              onPress={() => setFilter('today')}
+          >
+            <Text style={[styles.filterText, filter === 'today' && styles.filterTextActive]}>
+              Today
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+              style={[styles.filterButton, filter === 'completed' && styles.filterButtonActive]}
+              onPress={() => setFilter('completed')}
+          >
+            <Text style={[styles.filterText, filter === 'completed' && styles.filterTextActive]}>
+              Completed
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <FlatList
+            data={filteredHabits()}
+            renderItem={renderHabit}
+            keyExtractor={item => item.id}
+            contentContainerStyle={styles.list}
+        />
       </View>
-      <FlatList
-        data={filteredHabits()}
-        renderItem={renderHabit}
-        keyExtractor={item => item.id}
-        contentContainerStyle={styles.list}
-      />
-    </View>
   );
 };
 
@@ -200,4 +200,4 @@ const styles = StyleSheet.create({
   deleteButton: {
     backgroundColor: '#fff',
   },
-}); 
+});
