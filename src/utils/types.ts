@@ -3,6 +3,7 @@ export interface User {
   name: string;
   email: string;
   password: string;
+  gender: string;
 }
 
 export interface Habit {
@@ -17,7 +18,7 @@ export interface Habit {
 export interface AuthContextType {
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
-  register: (name: string, email: string, password: string) => Promise<void>;
+  register: (name: string, email: string, password: string, gender: string) => Promise<void>;
   logout: () => Promise<void>;
 }
 
@@ -28,4 +29,4 @@ export interface HabitContextType {
   completeHabit: (habitId: string) => Promise<void>;
   deleteHabit: (habitId: string) => Promise<void>;
   getHabitsByDate: (date: string) => Habit[];
-} 
+}
