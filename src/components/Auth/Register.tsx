@@ -14,10 +14,11 @@ export const Register = ({ navigation }: any) => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [gender, setGender] = useState('');
   const { register } = useAuth();
 
   const handleRegister = async () => {
-    if (!firstName || !lastName || !email || !password) {
+    if (!firstName || !lastName || !email || !password || !gender) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
@@ -25,7 +26,7 @@ export const Register = ({ navigation }: any) => {
     try {
       // Combine first and last name for the full name
       const fullName = `${firstName} ${lastName}`;
-      await register(fullName, email, password);
+      await register(fullName, email, password, gender);
     } catch (error) {
       Alert.alert('Error', 'Registration failed');
     }
@@ -65,6 +66,49 @@ export const Register = ({ navigation }: any) => {
             onChangeText={setPassword}
             secureTextEntry
         />
+
+        <View style={styles.genderContainer}>
+          <Text style={styles.genderLabel}>Gender:</Text>
+          <View style={styles.genderOptions}>
+            <TouchableOpacity
+                style={[
+                  styles.genderButton,
+                  gender === 'male' && styles.genderButtonSelected,
+                ]}
+                onPress={() => setGender('male')}
+            >
+              <Text style={[
+                styles.genderButtonText,
+                gender === 'male' && styles.genderButtonTextSelected,
+              ]}>Male</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[
+                  styles.genderButton,
+                  gender === 'female' && styles.genderButtonSelected,
+                ]}
+                onPress={() => setGender('female')}
+            >
+              <Text style={[
+                styles.genderButtonText,
+                gender === 'female' && styles.genderButtonTextSelected,
+              ]}>Female</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={[
+                  styles.genderButton,
+                  gender === 'other' && styles.genderButtonSelected,
+                ]}
+                onPress={() => setGender('other')}
+            >
+              <Text style={[
+                styles.genderButtonText,
+                gender === 'other' && styles.genderButtonTextSelected,
+              ]}>Other</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
         <TouchableOpacity style={styles.button} onPress={handleRegister}>
           <Text style={styles.buttonText}>Register</Text>
         </TouchableOpacity>
@@ -108,6 +152,39 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 15,
     fontSize: 16,
+  },
+  genderContainer: {
+    marginBottom: 15,
+  },
+  genderLabel: {
+    fontSize: 16,
+    marginBottom: 10,
+    color: '#333',
+  },
+  genderOptions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  genderButton: {
+    flex: 1,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 5,
+  },
+  genderButtonSelected: {
+    backgroundColor: '#6200ee',
+    borderColor: '#6200ee',
+  },
+  genderButtonText: {
+    color: '#333',
+    fontSize: 14,
+  },
+  genderButtonTextSelected: {
+    color: '#fff',
   },
   button: {
     backgroundColor: '#6200ee',
