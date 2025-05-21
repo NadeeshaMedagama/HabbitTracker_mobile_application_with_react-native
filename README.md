@@ -1,3 +1,54 @@
+# 📱 Habit Tracker App
+
+A mobile application built with React Native and Expo to help users build and maintain healthy habits. The app allows users to create, track, and manage daily habits with a clean and intuitive user interface.
+
+## 🚀 Features
+
+- Create and delete habits
+- Mark habits as complete/incomplete daily
+- View progress visually with a calendar or chart
+- Local notifications for reminders
+- Dark/light theme support
+
+---
+
+## 🛠️ Setup Instructions
+
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- [Git](https://git-scm.com/)
+- A code editor (e.g., VS Code)
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+
+- Node.js: [Download here](https://nodejs.org/)
+- React Native CLI:
+  ```bash
+  npm install -g react-native-cli
+  ```
+  
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/habit-tracker-app.git
+cd habit-tracker-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the development server
+
+```bash
+npx react-native run-android
+```
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
@@ -95,3 +146,12 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+---
+## 📬 Contact
+
+If you have any questions, suggestions, or contributions, feel free to open an issue or reach out at [nadeeshamedagama@gmail.com].
+
+---
+
+Let me know if you'd like to customize the features, contact section, or change your directory names!
