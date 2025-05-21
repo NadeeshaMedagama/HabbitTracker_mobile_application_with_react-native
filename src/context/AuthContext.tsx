@@ -27,26 +27,28 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = async (name: string, email: string, password: string, gender: string) => {
     const newUser: User = {
       id: Date.now().toString(),
       name,
       email,
       password,
+      gender,
     };
     await storage.saveUser(newUser);
     setUser(newUser);
   };
 
   const logout = async () => {
-    // await storage.clearAll();
+    // Only clear the current user's session
     setUser(null);
+    // Don't clear the storage, so registered users remain
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, register, logout }}>
-      {children}
-    </AuthContext.Provider>
+      <AuthContext.Provider value={{ user, login, register, logout }}>
+        {children}
+      </AuthContext.Provider>
   );
 };
 
