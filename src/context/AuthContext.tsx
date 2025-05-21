@@ -27,13 +27,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const register = async (name: string, email: string, password: string, gender: string) => {
+  const register = async (name: string, email: string, password: string, gender: string, birthday: string) => {
     const newUser: User = {
       id: Date.now().toString(),
       name,
       email,
       password,
       gender,
+      birthday,
     };
     await storage.saveUser(newUser);
     setUser(newUser);
