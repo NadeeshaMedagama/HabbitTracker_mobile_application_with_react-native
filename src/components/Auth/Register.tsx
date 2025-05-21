@@ -15,10 +15,11 @@ export const Register = ({ navigation }: any) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [gender, setGender] = useState('');
+  const [birthday, setBirthday] = useState('');
   const { register } = useAuth();
 
   const handleRegister = async () => {
-    if (!firstName || !lastName || !email || !password || !gender) {
+    if (!firstName || !lastName || !email || !password || !gender || !birthday) {
       Alert.alert('Error', 'Please fill in all fields');
       return;
     }
@@ -26,7 +27,7 @@ export const Register = ({ navigation }: any) => {
     try {
       // Combine first and last name for the full name
       const fullName = `${firstName} ${lastName}`;
-      await register(fullName, email, password, gender);
+      await register(fullName, email, password, gender, birthday);
     } catch (error) {
       Alert.alert('Error', 'Registration failed');
     }
@@ -65,6 +66,12 @@ export const Register = ({ navigation }: any) => {
             value={password}
             onChangeText={setPassword}
             secureTextEntry
+        />
+        <TextInput
+            style={styles.input}
+            placeholder="Birthday (YYYY-MM-DD)"
+            value={birthday}
+            onChangeText={setBirthday}
         />
 
         <View style={styles.genderContainer}>
