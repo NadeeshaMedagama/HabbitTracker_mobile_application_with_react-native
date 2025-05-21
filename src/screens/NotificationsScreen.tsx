@@ -1,53 +1,55 @@
 import React from 'react';
 import { View, Text, StyleSheet, Switch } from 'react-native';
 import { useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const NotificationsScreen = () => {
     const [dailyReminders, setDailyReminders] = useState(false);
     const [weeklyReports, setWeeklyReports] = useState(false);
     const [achievementAlerts, setAchievementAlerts] = useState(true);
+    const { colors } = useTheme();
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Notifications</Text>
+        <View style={[styles.container, { backgroundColor: colors.background }]}>
+            <Text style={[styles.title, { color: colors.primary }]}>Notifications</Text>
 
             <View style={styles.section}>
-                <View style={styles.settingItem}>
+                <View style={[styles.settingItem, { borderBottomColor: colors.border }]}>
                     <View style={styles.settingInfo}>
-                        <Text style={styles.settingTitle}>Daily Reminders</Text>
-                        <Text style={styles.settingDescription}>Get reminded about your daily habits</Text>
+                        <Text style={[styles.settingTitle, { color: colors.text }]}>Daily Reminders</Text>
+                        <Text style={[styles.settingDescription, { color: colors.textSecondary }]}>Get reminded about your daily habits</Text>
                     </View>
                     <Switch
                         value={dailyReminders}
                         onValueChange={setDailyReminders}
-                        trackColor={{ false: '#767577', true: '#6200ee' }}
-                        thumbColor={dailyReminders ? '#fff' : '#f4f3f4'}
+                        trackColor={{ false: colors.border, true: colors.primary }}
+                        thumbColor={dailyReminders ? colors.white : colors.card}
                     />
                 </View>
 
-                <View style={styles.settingItem}>
+                <View style={[styles.settingItem, { borderBottomColor: colors.border }]}>
                     <View style={styles.settingInfo}>
-                        <Text style={styles.settingTitle}>Weekly Reports</Text>
-                        <Text style={styles.settingDescription}>Receive weekly progress summaries</Text>
+                        <Text style={[styles.settingTitle, { color: colors.text }]}>Weekly Reports</Text>
+                        <Text style={[styles.settingDescription, { color: colors.textSecondary }]}>Receive weekly progress summaries</Text>
                     </View>
                     <Switch
                         value={weeklyReports}
                         onValueChange={setWeeklyReports}
-                        trackColor={{ false: '#767577', true: '#6200ee' }}
-                        thumbColor={weeklyReports ? '#fff' : '#f4f3f4'}
+                        trackColor={{ false: colors.border, true: colors.primary }}
+                        thumbColor={weeklyReports ? colors.white : colors.card}
                     />
                 </View>
 
-                <View style={styles.settingItem}>
+                <View style={[styles.settingItem, { borderBottomColor: colors.border }]}>
                     <View style={styles.settingInfo}>
-                        <Text style={styles.settingTitle}>Achievement Alerts</Text>
-                        <Text style={styles.settingDescription}>Get notified when you reach milestones</Text>
+                        <Text style={[styles.settingTitle, { color: colors.text }]}>Achievement Alerts</Text>
+                        <Text style={[styles.settingDescription, { color: colors.textSecondary }]}>Get notified when you reach milestones</Text>
                     </View>
                     <Switch
                         value={achievementAlerts}
                         onValueChange={setAchievementAlerts}
-                        trackColor={{ false: '#767577', true: '#6200ee' }}
-                        thumbColor={achievementAlerts ? '#fff' : '#f4f3f4'}
+                        trackColor={{ false: colors.border, true: colors.primary }}
+                        thumbColor={achievementAlerts ? colors.white : colors.card}
                     />
                 </View>
             </View>
@@ -58,14 +60,12 @@ const NotificationsScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
         padding: 20,
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
-        color: '#6200ee',
     },
     section: {
         marginBottom: 20,
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingVertical: 15,
         borderBottomWidth: 1,
-        borderBottomColor: '#eee',
     },
     settingInfo: {
         flex: 1,
@@ -85,12 +84,10 @@ const styles = StyleSheet.create({
     settingTitle: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#333',
         marginBottom: 4,
     },
     settingDescription: {
         fontSize: 14,
-        color: '#666',
     },
 });
 
