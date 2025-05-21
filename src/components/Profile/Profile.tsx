@@ -26,6 +26,11 @@ export const Profile = ({ navigation }: any) => {
           <Icon name="account-circle" size={80} color={colors.primary} />
           <Text style={[styles.name, { color: colors.text }]}>{user?.name}</Text>
           <Text style={[styles.email, { color: colors.textSecondary }]}>{user?.email}</Text>
+          {user?.gender && (
+              <Text style={[styles.gender, { color: colors.textSecondary }]}>Gender:&nbsp;
+                {user.gender.charAt(0).toUpperCase() + user.gender.slice(1)}
+              </Text>
+          )}
         </View>
 
         <View style={styles.section}>
@@ -85,6 +90,11 @@ const styles = StyleSheet.create({
   email: {
     fontSize: 16,
     marginTop: 5,
+  },
+  gender: {
+    fontSize: 16,
+    marginTop: 5,
+    textTransform: 'capitalize',
   },
   section: {
     marginBottom: 30,
