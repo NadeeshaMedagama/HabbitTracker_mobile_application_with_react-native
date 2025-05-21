@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useAuth } from '../../context/AuthContext';
+import { useTheme } from '../../context/ThemeContext';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export const Profile = ({ navigation }: any) => {
   const { user, logout } = useAuth();
+  const { colors } = useTheme();
 
   const handleLogout = async () => {
     try {
@@ -19,42 +21,45 @@ export const Profile = ({ navigation }: any) => {
   };
 
   return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Icon name="account-circle" size={80} color="#6200ee" />
-          <Text style={styles.name}>{user?.name}</Text>
-          <Text style={styles.email}>{user?.email}</Text>
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={[styles.header, { borderBottomColor: colors.border }]}>
+          <Icon name="account-circle" size={80} color={colors.primary} />
+          <Text style={[styles.name, { color: colors.text }]}>{user?.name}</Text>
+          <Text style={[styles.email, { color: colors.textSecondary }]}>{user?.email}</Text>
         </View>
 
         <View style={styles.section}>
           <TouchableOpacity
-              style={styles.menuItem}
+              style={[styles.menuItem, { borderBottomColor: colors.border }]}
               onPress={() => navigation.navigate('Settings')}
           >
-            <Icon name="settings" size={24} color="#6200ee" />
-            <Text style={styles.menuText}>Settings</Text>
+            <Icon name="settings" size={24} color={colors.primary} />
+            <Text style={[styles.menuText, { color: colors.text }]}>Settings</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-              style={styles.menuItem}
+              style={[styles.menuItem, { borderBottomColor: colors.border }]}
               onPress={() => navigation.navigate('Notifications')}
           >
-            <Icon name="notifications" size={24} color="#6200ee" />
-            <Text style={styles.menuText}>Notifications</Text>
+            <Icon name="notifications" size={24} color={colors.primary} />
+            <Text style={[styles.menuText, { color: colors.text }]}>Notifications</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-              style={styles.menuItem}
+              style={[styles.menuItem, { borderBottomColor: colors.border }]}
               onPress={() => navigation.navigate('HelpSupport')}
           >
-            <Icon name="help" size={24} color="#6200ee" />
-            <Text style={styles.menuText}>Help & Support</Text>
+            <Icon name="help" size={24} color={colors.primary} />
+            <Text style={[styles.menuText, { color: colors.text }]}>Help & Support</Text>
           </TouchableOpacity>
         </View>
 
-        <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
-          <Icon name="logout" size={24} color="#fff" />
-          <Text style={styles.logoutText}>Logout</Text>
+        <TouchableOpacity
+            style={[styles.logoutButton, { backgroundColor: colors.error }]}
+            onPress={handleLogout}
+        >
+          <Icon name="logout" size={24} color={colors.white} />
+          <Text style={[styles.logoutText, { color: colors.white }]}>Logout</Text>
         </TouchableOpacity>
       </View>
   );
@@ -63,7 +68,6 @@ export const Profile = ({ navigation }: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     padding: 20,
   },
   header: {
@@ -71,18 +75,15 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     paddingVertical: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
   },
   name: {
     fontSize: 28,
     fontWeight: 'bold',
     marginTop: 15,
-    color: '#333',
     textAlign: 'center',
   },
   email: {
     fontSize: 16,
-    color: '#666',
     marginTop: 5,
   },
   section: {
@@ -93,24 +94,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#eee',
   },
   menuText: {
     fontSize: 16,
     marginLeft: 15,
-    color: '#333',
   },
   logoutButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#ff4444',
     padding: 15,
     borderRadius: 10,
     marginTop: 'auto',
   },
   logoutText: {
-    color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
     marginLeft: 10,
