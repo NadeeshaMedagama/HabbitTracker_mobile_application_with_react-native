@@ -13,8 +13,8 @@ const SettingsScreen = () => {
 
             <View style={[styles.section, { backgroundColor: colors.card }]}>
                 <Text style={[styles.sectionTitle, { color: colors.text }]}>Account Details</Text>
-                <Text style={[styles.text, { color: colors.textSecondary }]}>Email: {user?.email}</Text>
                 <Text style={[styles.text, { color: colors.textSecondary }]}>Name: {user?.name}</Text>
+                <Text style={[styles.text, { color: colors.textSecondary }]}>Email: {user?.email}</Text>
                 <Text style={[styles.text, { color: colors.textSecondary }]}>Gender: {user?.gender}</Text>
                 <Text style={[styles.text, { color: colors.textSecondary }]}>Birthday: {user?.birthday}</Text>
             </View>
