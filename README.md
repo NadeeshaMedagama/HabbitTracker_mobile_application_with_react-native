@@ -1,166 +1,332 @@
-# 📱 Habit Tracker App
+# 🎯 HabitTracker
 
-A mobile application built with React Native and Expo to help users build and maintain healthy habits. The app allows users to create, track, and manage daily habits with a clean and intuitive user interface.
+<div align="center">
+  <img src="./assets/app-icon.png" alt="HabitTracker Logo" width="120" height="120">
 
-## 🚀 Features
+**Build Better Habits, Transform Your Life**
 
-- Create and delete habits
-- Mark habits as complete/incomplete daily
-- View progress visually with a calendar or chart
-- Local notifications for reminders
-- Dark/light theme support
+A beautifully designed mobile application built with React Native and Expo to help users create, track, and maintain healthy daily habits with ease.
 
----
+[![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](./LICENSE)
 
-## 🛠️ Setup Instructions
-
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/)
-- [Expo CLI](https://docs.expo.dev/get-started/installation/)
-- [Git](https://git-scm.com/)
-- A code editor (e.g., VS Code)
+[📱 Download APK](#-installation) • [🎥 Demo Video](#-demo) • [📋 Features](#-features) • [🚀 Getting Started](#-getting-started)
+</div>
 
 ---
-## Demo Video
 
-[Link to Demo Video](https://habit-tracker-mobile-app-demo-video.netlify.app/)
+## 🎥 Demo
 
----
+<div align="center">
+  <a href="https://habit-tracker-mobile-app-demo-video.netlify.app/">
+    <img src="./src/assets/img.png" alt="HabitTracker Demo Video" width="600">
+  </a>
+
+**[🎬 Watch Full Demo Video](https://your-demo-video-link.com)**
+
+*Click the image above or the link to see HabitTracker in action*
+</div>
+
+## 📱 Screenshots
+
+<div align="center">
+  <img src="./src/assets/img.png" alt="Home Screen Light" width="200">
+  <img src="./src/assets/img_1.png" alt="Home Screen Dark" width="200">
+  <img src="./src/assets/img_3.png" alt="Habits List" width="200">
+  <img src="./src/assets/img_2.png" alt="Progress Chart" width="200">
+</div>
+
+## ✨ Features
+
+### 🎯 Core Features
+- **Create & Manage Habits** - Add new habits with custom names, descriptions, and colors
+- **Daily Tracking** - Mark habits as complete or incomplete with a simple tap
+- **Progress Visualization** - View your progress with beautiful calendar views and interactive charts
+- **Smart Notifications** - Get reminded about your habits at the perfect time
+- **Theme Support** - Switch between elegant dark and light themes
+
+### 🔧 Advanced Features
+- **Streak Tracking** - Monitor your longest streaks and current progress
+- **Habit Categories** - Organize habits by categories (Health, Productivity, Personal, etc.)
+- **Weekly/Monthly Views** - Analyze your performance over different time periods
+- **Export Data** - Backup your progress and export statistics
+- **Offline Support** - Works perfectly without internet connection
+
+### 🎨 User Experience
+- **Intuitive Interface** - Clean, modern design that's easy to navigate
+- **Smooth Animations** - Delightful micro-interactions and transitions
+- **Responsive Design** - Optimized for all screen sizes
+- **Accessibility** - Built with accessibility best practices
+
+## 🚀 Getting Started
+
 ### Prerequisites
 
-Make sure you have the following installed on your system:
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/)
+- [Git](https://git-scm.com/)
 
-- Node.js: [Download here](https://nodejs.org/)
-- React Native CLI:
-  ```bash
-  npm install -g react-native-cli
-  ```
-  
-### 1. Clone the repository
+### 📲 Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/habittracker.git
+   cd habittracker
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npx expo start
+   ```
+
+4. **Run on your device**
+  - Install [Expo Go](https://expo.dev/client) on your mobile device
+  - Scan the QR code displayed in your terminal
+  - Or press `a` for Android emulator, `i` for iOS simulator
+
+### 🔧 Development Setup
 
 ```bash
-git clone https://github.com/yourusername/habit-tracker-app.git
-cd habit-tracker-app
-```
-
-### 2. Install dependencies
-
-```bash
+# Install dependencies
 npm install
-```
 
-### 3. Start the development server
-
-```bash
-npx react-native run-android
-```
-
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
----
-# Getting Started
-
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
+# Start development server
 npm start
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
+# Run on Android
 npm run android
 
-# OR using Yarn
-yarn android
+# Run on iOS
+npm run ios
+
+# Run on web
+npm run web
+
+# Build for production
+npm run build
+```
+
+## 🏗️ Built With
+
+### Core Technologies
+- **[React Native](https://reactnative.dev/)** - Mobile app framework
+- **[Expo](https://expo.dev/)** - Development platform and tools
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript
+- **[React Navigation](https://reactnavigation.org/)** - Navigation library
+
+### UI & Styling
+- **[NativeBase](https://nativebase.io/)** / **[React Native Elements](https://reactnativeelements.com/)** - UI component library
+- **[React Native Reanimated](https://docs.swmansion.com/react-native-reanimated/)** - Advanced animations
+- **[React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)** - Icon library
+
+### Data & Storage
+- **[AsyncStorage](https://react-native-async-storage.github.io/async-storage/)** - Local data persistence
+- **[React Native SQLite](https://github.com/andpor/react-native-sqlite-storage)** - Local database
+- **[Redux Toolkit](https://redux-toolkit.js.org/)** - State management
+
+### Additional Libraries
+- **[React Native Calendars](https://github.com/wix/react-native-calendars)** - Calendar components
+- **[Victory Native](https://formidable.com/open-source/victory/docs/native/)** - Data visualization
+- **[Expo Notifications](https://docs.expo.dev/versions/latest/sdk/notifications/)** - Push notifications
+- **[React Native Haptic Feedback](https://github.com/junina-de/react-native-haptic-feedback)** - Haptic feedback
+
+## 📱 App Architecture
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── common/         # Common components (Button, Input, etc.)
+│   ├── habits/         # Habit-specific components
+│   └── charts/         # Chart and visualization components
+├── screens/            # Screen components
+│   ├── HomeScreen/     # Main dashboard
+│   ├── HabitsScreen/   # Habits management
+│   ├── ProgressScreen/ # Progress visualization
+│   └── SettingsScreen/ # App settings
+├── navigation/         # Navigation configuration
+├── services/          # API and data services
+├── store/             # Redux store and slices
+├── utils/             # Helper functions and utilities
+├── hooks/             # Custom React hooks
+├── constants/         # App constants and themes
+└── types/             # TypeScript type definitions
+```
+
+## 🎨 Design System
+
+### Colors
+```javascript
+const colors = {
+  primary: '#6366F1',
+  secondary: '#8B5CF6',
+  success: '#10B981',
+  warning: '#F59E0B',
+  error: '#EF4444',
+  // ... more colors
+}
+```
+
+### Typography
+- **Headings**: Inter Bold
+- **Body Text**: Inter Regular
+- **Captions**: Inter Medium
+
+## 📊 Features in Detail
+
+### 🎯 Habit Management
+- Create habits with custom names, descriptions, and icons
+- Set habit frequency (daily, weekly, custom)
+- Organize habits into categories
+- Archive or delete habits
+
+### 📅 Progress Tracking
+- Visual calendar with completion status
+- Streak counters and statistics
+- Monthly and yearly overview
+- Progress charts and analytics
+
+### 🔔 Smart Notifications
+- Customizable reminder times
+- Motivational messages
+- Streak milestone celebrations
+- Daily summary notifications
+
+## 🤝 Contributing
+
+We love contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Process
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Code Style
+- Follow ESLint and Prettier configurations
+- Use TypeScript for type safety
+- Write meaningful commit messages
+- Add tests for new features
+
+## 🧪 Testing
+
+```bash
+# Run unit tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run E2E tests
+npm run test:e2e
+```
+
+## 📦 Building for Production
+
+### Android
+```bash
+# Build APK
+expo build:android
+
+# Build AAB (recommended for Play Store)
+expo build:android -t app-bundle
 ```
 
 ### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+# Build IPA
+expo build:ios
 ```
 
-Then, and every time you update your native dependencies, run:
+## 🚀 Deployment
 
-```sh
-bundle exec pod install
-```
+The app can be deployed through:
+- **Expo Application Services (EAS)** - Recommended
+- **Manual builds** using Expo CLI
+- **Direct submission** to app stores
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+## 📱 Download
 
-```sh
-# Using npm
-npm run ios
+<div align="center">
 
-# OR using Yarn
-yarn ios
-```
+[<img src="src/./assets/google-play-badge.png" alt="Get it on Google Play" width="200">](https://play.google.com/store/apps/details?id=your.app.id)
+[<img src="./src/assets/app-store-badge.png" alt="Download on the App Store" width="200">](https://apps.apple.com/us/app/your-app-name/id123456789)
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Or download the APK directly: [📱 Download APK](https://github.com/yourusername/habittracker/releases/latest)
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+</div>
 
-## Step 3: Modify your app
+## 📄 License
 
-Now that you have successfully run the app, let's make changes!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## 👥 Team
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/NadeeshaMedagama">
+          <img src="https://github.com/NadeeshaMedagama.png" width="100px;" alt="Your Name"/>
+          <br />
+          <sub><b>Nadeesha</b></sub>
+        </a>
+        <br />
+        <sub>DevOps Enthusiast</sub>
+      </td>
+    </tr>
+  </table>
+</div>
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🙏 Acknowledgments
 
-## Congratulations! :tada:
+- Design inspiration from leading habit tracking apps
+- Icons from [Feather Icons](https://feathericons.com/)
+- Illustrations from [Undraw](https://undraw.co/)
+- Color palette inspired by [Tailwind CSS](https://tailwindcss.com/)
 
-You've successfully run and modified your React Native App. :partying_face:
+## 📞 Support
 
-### Now what?
+Having issues? We're here to help!
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- 📧 Email: support@habittracker.com
+- 🐛 Bug Reports: [GitHub Issues](https://github.com/NadeeshaMedagama/HabitTracker_mobile_application_with_react-native.git/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/NadeeshaMedagama/HabitTracker_mobile_application_with_react-native.git/discussions)
+- 📱 Social: [@HabitTrackerApp](https://twitter.com/habitrackerapp)
+
+## 🗺️ Roadmap
+
+### 🔄 Version 2.0 (Coming Soon)
+- [ ] Social features - Share progress with friends
+- [ ] Habit templates and community suggestions
+- [ ] Advanced analytics and insights
+- [ ] Wearable device integration
+- [ ] Habit coaching and tips
+
+### 🎯 Future Features
+- [ ] Web application companion
+- [ ] Team habit challenges
+- [ ] Integration with health apps
+- [ ] AI-powered habit recommendations
+- [ ] Multi-language support
 
 ---
-# Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+<div align="center">
+  <p>Made with ❤️ for habit builders everywhere</p>
 
----
-# Learn More
+**[⭐ Star this repository](https://github.com/NadeeshaMedagama/HabitTracker_mobile_application_with_react-native.git) if you found it helpful!**
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
-
----
-## 📬 Contact
-
-If you have any questions, suggestions, or contributions, feel free to open an issue or reach out at [nadeeshamedagama@gmail.com].
-
----
-
-Let me know if you'd like to customize the features, contact section, or change your directory names!
+<sub>HabitTracker © 2024. All rights reserved.</sub>
+</div>
