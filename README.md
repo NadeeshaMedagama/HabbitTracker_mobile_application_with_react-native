@@ -24,7 +24,7 @@ A beautifully designed mobile application built with React Native and Expo to he
     <img src="./src/assets/img.png" alt="HabitTracker Demo Video" width="600">
   </a>
 
-**[🎬 Watch Full Demo Video](https://your-demo-video-link.com)**
+**[🎬 Watch Full Demo Video](https://habit-tracker-mobile-app-demo-video.netlify.app/)**
 
 *Click the image above or the link to see HabitTracker in action*
 </div>
