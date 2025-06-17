@@ -1,7 +1,7 @@
 # 🎯 HabitTracker
 
 <div align="center">
-  <img src="./assets/app-icon.png" alt="HabitTracker Logo" width="120" height="120">
+  <img src="./src/assets/img_4.png" alt="HabitTracker Logo" width="120" height="120">
 
 **Build Better Habits, Transform Your Life**
 
