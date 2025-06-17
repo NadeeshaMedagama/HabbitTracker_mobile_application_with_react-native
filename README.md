@@ -300,7 +300,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Having issues? We're here to help!
 
-- 📧 Email: support@habittracker.com
+- 📧 Email: nadeeshamedagama@gmail.com
 - 🐛 Bug Reports: [GitHub Issues](https://github.com/NadeeshaMedagama/HabitTracker_mobile_application_with_react-native.git/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/NadeeshaMedagama/HabitTracker_mobile_application_with_react-native.git/discussions)
 - 📱 Social: [@HabitTrackerApp](https://twitter.com/habitrackerapp)
